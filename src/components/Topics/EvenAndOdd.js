@@ -21,10 +21,10 @@ class EvenAndOdd extends Component {
     let odd = [];
 
     for (let i = 0; i < array.length; i++) {
-      if (arr[i] % 2 === 0) {
+      if (array[i] % 2 === 0) {
         even.push(parseInt(array[i], 10));
       } else {
-        odd.push(parseInt(arr[i], 10));
+        odd.push(parseInt(array[i], 10));
       }
     }
 
