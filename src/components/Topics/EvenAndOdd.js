@@ -16,7 +16,19 @@ class EvenAndOdd extends Component {
   }
 
   assignEvenAndOdds(userInput) {
-    // fill it up
+    let array = userInput.split(",");
+    let even = [];
+    let odd = [];
+
+    for (let i = 0; i < array.length; i++) {
+      if (arr[i] % 2 === 0) {
+        even.push(parseInt(array[i], 10));
+      } else {
+        odd.push(parseInt(arr[i], 10));
+      }
+    }
+
+    this.setState({evenArray: even, oddArray: odd});
   }
 
   render() {

@@ -31,7 +31,16 @@ class FilterObject extends Component {
   }
 
   filterArray(prop) {
-    //fill it up
+    let employees = this.state.employees;
+    let filteredArray = [];
+
+    for (let i = 0; i < employees.length; i++) {
+      if (employees[i].hasOwnProperty(prop)) {
+        filteredArray.push(employees[i]);
+      }
+    }
+
+    this.setState({filteredArray: filteredArray});
   }
   
 
@@ -39,10 +48,10 @@ class FilterObject extends Component {
     return (
       <div className="puzzleBox filterObjectPB">
         <h4>Filter Object</h4>
-        <span className="puzzleText">{this.state.unfilteredArray}</span>
+        <span className="puzzleText">Original: {this.state.employees, null, 10}</span>
         <input className="inputLine"></input>
         <button className="confirmationButton" onClick={ () => this.filterArray(this.state.userInput)}>Filter</button>
-        <span className="resultsBox filterObjectRB">{this.state.filteredArray}</span>
+        <span className="resultsBox filterObjectRB">Filtered: {this.state.filteredArray, null, 10}</span>
       </div>
     )
   }
